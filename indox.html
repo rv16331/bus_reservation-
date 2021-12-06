@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Bus-Ticket</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<style>
+			.available_seat{
+				background: #c1e250;
+				border-radius: 3px;
+				border: 1px solid #000000;
+				color: #000000;
+				cursor: pointer;
+				padding: 7px 0px 7px 0px;
+				vertical-align: middle;
+				font-size: 11px;
+				width: 85%;
+				margin: 0 auto;
+				font-weight: 600;
+				-webkit-touch-callout: none; /* iOS Safari */
+				-webkit-user-select: none; /* Safari */
+				-khtml-user-select: none; /* Konqueror HTML */
+				-moz-user-select: none; /* Old versions of Firefox */
+				-ms-user-select: none; /* Internet Explorer/Edge */
+				user-select: none;
+			}
+			.gents_seat{
+				background-size: 50%;
+			    background-repeat: no-repeat;
+			    background-position: 50%;
+			    background-color: #4caf50; 
+			    background-image: url(man.png);
+			    color: transparent;
+			}
+			table th, td{
+				padding: 3px !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">    
+			<table class="table" style="width: 190px; border: 1px solid;">
+				<thead>
+					<tr>
+						<th colspan="6" class="text-right"><img src="bus-steering.png"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="text-center">
+						<td><div class="available_seat">A1</div></td>
+						<td><div class="available_seat">A2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">A3</div></td>
+						<td><div class="available_seat">A4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">B1</div></td>
+						<td><div class="available_seat">B2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">B3</div></td>
+						<td><div class="available_seat">B4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">C1</div></td>
+						<td><div class="available_seat">C2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">C3</div></td>
+						<td><div class="available_seat">C4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">D1</div></td>
+						<td><div class="available_seat">D2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">D3</div></td>
+						<td><div class="available_seat">D4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">E1</div></td>
+						<td><div class="available_seat">E2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">E3</div></td>
+						<td><div class="available_seat">E4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">E1</div></td>
+						<td><div class="available_seat">E2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">E3</div></td>
+						<td><div class="available_seat">E4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">F1</div></td>
+						<td><div class="available_seat">F2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">F3</div></td>
+						<td><div class="available_seat">F4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">G1</div></td>
+						<td><div class="available_seat">G2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">G3</div></td>
+						<td><div class="available_seat">G4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">H1</div></td>
+						<td><div class="available_seat">H2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">H3</div></td>
+						<td><div class="available_seat">H4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">I1</div></td>
+						<td><div class="available_seat">I2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">I3</div></td>
+						<td><div class="available_seat">I4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">J1</div></td>
+						<td><div class="available_seat">J2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">J3</div></td>
+						<td><div class="available_seat">J4</div></td>
+					</tr>
+					<tr class="text-center">
+						<td><div class="available_seat">K1</div></td>
+						<td><div class="available_seat">K2</div></td>
+						<td colspan="2"></td>
+						<td><div class="available_seat">K3</div></td>
+						<td><div class="available_seat">K4</div></td>
+					</tr>
+				</tbody>
+			</table>
+			<span id="allseats"></span>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script>
+			$(".available_seat").click(function(event) {
+				var total_seats = '';
+				event.preventDefault();
+				var this_text = $(this).text();
+				//alert(this_text.trim());
+				$(this).toggleClass("gents_seat");
+				$(".available_seat").each(function(key){
+					var this_class = $(this).attr('class');
+					var this_seats = $(this).text();
+					if (this_class=='available_seat gents_seat') {
+						total_seats +=  this_seats.trim()+' - ';
+					}
+    			});
+    			$('#allseats').html(total_seats);
+			});
+		</script>
+	</body>
+</html>
