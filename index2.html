@@ -4,7 +4,7 @@
 		<title>Bus-Ticket</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
@@ -105,29 +105,35 @@
 			</table>
 			<span id="allseats"></span>
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="jquery.min.js"></script>
+		<script src="bootstrap.min.js"></script>
 		<script>
+			var str = '';
 			$(".available_seat").click(function(event) {
+				str = $(this);
+				$( '#new' ).modal('show');
+				if ($(this).attr('class')!='available_seat')
+					if ($(this).attr('class')=='available_seat gents_seat')
+						choose_candidate(0);
+					else
+						choose_candidate(1);
+			});
+			function choose_candidate(i){
 				var total_seats = '';
 				var checked_alt = 0;
-				event.preventDefault();
-				var this_text = $(this).text();
-				a = $(this).toggleClass("gents_seat");
+				if (i!=1)
+					$(str).toggleClass("gents_seat");
+				else
+					$(str).toggleClass("ladies_seat");
 				$(".available_seat").each(function(key){
-					var this_class = $(this).attr('class');
 					var this_seats = $(this).text();
-					if (this_class=='available_seat gents_seat') {
+					if ($(this).attr('class')=='available_seat gents_seat' || $(this).attr('class')=='available_seat ladies_seat') {
 						total_seats +=  this_seats.trim()+' - ';
 						checked_alt++;
 					}
     			});
     			$('#allseats').html(total_seats);
-    			if (checked_alt!=0)
-    				$( '#new' ).modal('show');
-			});
-			function choose_candidate(i){
-				console.log(i);
+    			$( '#new' ).modal('hide');
 			};
 		</script>
 		<div class = "modal" id = "new" role = "dialog">

@@ -1,0 +1,38 @@
+.available_seat{
+	background: #c1e250;
+	border-radius: 3px;
+	border: 1px solid #000000;
+	color: #000000;
+	cursor: pointer;
+	padding: 7px 0px 7px 0px;
+	vertical-align: middle;
+	font-size: 11px;
+	width: 85%;
+	margin: 0 auto;
+	font-weight: 600;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+}
+.gents_seat{
+	background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: #4caf50; 
+    background-image: url(man.png);
+    color: transparent;
+}
+.ladies_seat{
+	background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: #f05b66; 
+    background-image: url(fmale.png);
+    color: transparent;
+}
+table th, td{
+	padding: 3px !important;
+}
