@@ -36,3 +36,36 @@
 table th, td{
 	padding: 3px !important;
 }
+
+.info_available_seat{
+	background-color: #c1e250;
+    border: 1px solid #819638;
+    width: 30px;
+    height: 30px;
+    margin: 3px 5px 3px 0;
+    border-radius: 3px;
+}
+.info_reserved_seat{
+	background-color: #9e9e9e;
+    border: 1px solid #8c8c8c!important;
+    width: 30px;
+    height: 30px;
+    margin: 3px 5px 3px 0;
+    border-radius: 3px;
+}
+.info_gents_seat{
+	border: 1px solid #4caf50;
+    background-color: #4595d2;
+    width: 30px;
+    height: 30px;
+    margin: 3px 5px 3px 0;
+    border-radius: 3px;
+}
+.info_ladies_seat{
+	border: 1px solid #f05b66;
+    background-color: #f05b66;
+    width: 30px;
+    height: 30px;
+    margin: 3px 5px 3px 0;
+    border-radius: 3px;
+}
